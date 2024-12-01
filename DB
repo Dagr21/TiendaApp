@@ -1,0 +1,80 @@
+-- Tabla Administrador
+CREATE TABLE Administrador (
+    id INT PRIMARY KEY IDENTITY,
+    name NVARCHAR(100) NOT NULL,
+    lastName NVARCHAR(100) NOT NULL,
+    identification NVARCHAR(50) UNIQUE NOT NULL,
+    email NVARCHAR(100) UNIQUE NOT NULL,
+    role NVARCHAR(50) NOT NULL,
+    password NVARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
+);
+
+-- Tabla Clientes
+CREATE TABLE Clientes (
+    id INT PRIMARY KEY IDENTITY,
+    name NVARCHAR(100) NOT NULL,
+    lastName NVARCHAR(100) NOT NULL,
+    identification NVARCHAR(50) UNIQUE NOT NULL,
+    email NVARCHAR(100) UNIQUE NOT NULL,
+    password NVARCHAR(255) NOT NULL,
+    image_profile NVARCHAR(255),
+    role NVARCHAR(50),
+    cantidad INT,
+    created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
+);
+
+-- Tabla Direccions
+CREATE TABLE Direccions (
+    id INT PRIMARY KEY IDENTITY,
+    client_id INT NOT NULL,
+    identifier NVARCHAR(50) NOT NULL,
+    direction NVARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE(),
+    CONSTRAINT FK_Direccions_Clientes FOREIGN KEY (client_id) REFERENCES Clientes(id)
+);
+
+-- Tabla Categoria
+CREATE TABLE Categoria (
+    id INT PRIMARY KEY IDENTITY,
+    name NVARCHAR(100) NOT NULL,
+    description NVARCHAR(255),
+    quantity INT,
+    trade_id INT NOT NULL,
+    created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
+);
+
+-- Tabla Productos
+CREATE TABLE Productos (
+    id INT PRIMARY KEY IDENTITY,
+    name NVARCHAR(100) NOT NULL,
+    image NVARCHAR(255),
+    description NVARCHAR(255),
+    price DECIMAL(10, 2) NOT NULL,
+    trade_id INT NOT NULL,
+    category_id INT NOT NULL,
+    created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE(),
+    CONSTRAINT FK_Productos_Categoria FOREIGN KEY (category_id) REFERENCES Categoria(id)
+);
+
+-- Tabla Pedidos
+CREATE TABLE Pedidos (
+    id INT PRIMARY KEY IDENTITY,
+    client_id INT NOT NULL,
+    direction_id INT NOT NULL,
+    trade_id INT NOT NULL,
+    sub_total DECIMAL(10, 2) NOT NULL,
+    date DATE NOT NULL,
+    hour TIME NOT NULL,
+    total DECIMAL(10, 2) NOT NULL,
+    status NVARCHAR(50) NOT NULL,
+    created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE(),
+    CONSTRAINT FK_Pedidos_Clientes FOREIGN KEY (client_id) REFERENCES Clientes(id),
+    CONSTRAINT FK_Pedidos_Direccions FOREIGN KEY (direction_id) REFERENCES Direccions(id)
+);

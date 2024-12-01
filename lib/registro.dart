@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:main_app/registro.dart';
+import 'package:main_app/Login.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,19 +11,19 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Login(),
+      home: Register(),
     );
   }
 }
 
-class Login extends StatelessWidget {
+class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text(
-          'Login',
+          'Registro',
           style: TextStyle(color: Colors.white),
         ),
         leading: IconButton(
@@ -41,7 +41,7 @@ class Login extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Text(
-                  'LOGIN',
+                  'REGISTRATE',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -66,7 +66,25 @@ class Login extends StatelessWidget {
                         TextField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
-                            labelText: 'Correo Electronico',
+                            labelText: 'Nombre',
+                            prefixIcon: const Icon(Icons.person),
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+
+                        TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Apellido',
+                            prefixIcon: const Icon(Icons.person),
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+
+                        TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Correo',
                             prefixIcon: const Icon(Icons.email),
                           ),
                         ),
@@ -113,12 +131,12 @@ class Login extends StatelessWidget {
                     Navigator.push(
                     context,
                       MaterialPageRoute(
-                        builder: (context) => Register(),
+                        builder: (context) => Login (),
                       ),
                     );
                   },
                   child: const Text(
-                    'No tienes cuenta? Registrate',
+                    'Ya tienes cuenta? Inicia Sesion',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 14,

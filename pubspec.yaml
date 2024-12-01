@@ -14,7 +14,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 flutter:
 
@@ -22,7 +22,10 @@ flutter:
     - assets/gz.png
     - assets/portada.jpg
     - assets/MLB.jpg
-    - assets\HATS.jpg
+    - assets/HATS.jpg
+    - assets/invierno.jpg
+    - assets/Dodgersws.jpg
+
 
   uses-material-design: true
 

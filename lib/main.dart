@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:main_app/trends.dart';
 import 'user.dart';
 import 'product.dart';
 
@@ -104,7 +105,12 @@ class HomePage extends StatelessWidget {
                 leading: Icon(Icons.trending_up),
                 title: Text("Tendencias"),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                      MaterialPageRoute(
+                        builder: (context) => Tendencias(),
+                      ),
+                    );
                 },
               ),
               ListTile(
