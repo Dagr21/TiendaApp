@@ -1,6 +1,6 @@
 // src/models/Direccions.js
 const { DataTypes } = require('sequelize');
-const sequelize = require('../database');
+const sequelize = require('../../database');
 const Clientes = require('./Clientes');
 
 const Direccions = sequelize.define('Direccions', {

@@ -1,6 +1,6 @@
 // src/models/Administrador.js
 const { DataTypes } = require('sequelize');
-const sequelize = require('../database');
+const sequelize = require('../../database');
 
 const Administrador = sequelize.define('Administrador', {
   name: {
