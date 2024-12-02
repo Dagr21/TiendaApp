@@ -1,6 +1,6 @@
 {
-    "name": "tiendaapp",
-    "short_name": "tiendaapp",
+    "name": "main_app",
+    "short_name": "main_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

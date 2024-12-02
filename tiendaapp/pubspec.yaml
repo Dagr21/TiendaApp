@@ -1,19 +1,42 @@
-name: tiendaapp
+name: main_app
 description: "A new Flutter project."
 publish_to: 'none'
 version: 0.1.0
 
 environment:
-  sdk: ^3.5.3
+  sdk: ^3.5.4
 
 dependencies:
   flutter:
     sdk: flutter
+  font_awesome_flutter: ^10.5.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 flutter:
+
+  assets:
+    - assets/gz.png
+    - assets/portada.jpg
+    - assets/MLB.jpg
+    - assets/HATS.jpg
+    - assets/invierno.jpg
+    - assets/Dodgersws.jpg
+
+
   uses-material-design: true
+
+  fonts: 
+    - family: Mecha
+      fonts:
+        - asset: assets\fonts\MechaWar.ttf
+
+    - family: Kenzo
+      fonts:
+        - asset: assets\fonts\Kenzoestic-Bold.otf
+
+
+
