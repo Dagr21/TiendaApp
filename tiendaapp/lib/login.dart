@@ -17,6 +17,8 @@ class MainApp extends StatelessWidget {
 }
 
 class Login extends StatelessWidget {
+  const Login({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

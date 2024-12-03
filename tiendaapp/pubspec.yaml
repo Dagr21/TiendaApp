@@ -10,11 +10,15 @@ dependencies:
   flutter:
     sdk: flutter
   font_awesome_flutter: ^10.5.0
+  collection: ^1.18.0
+  http_parser: ^4.0.2
+
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   flutter_lints: ^5.0.0
+  build_runner: ^2.4.0
+  json_serializable: ^6.7.0
+
 
 flutter:
 
@@ -26,17 +30,13 @@ flutter:
     - assets/invierno.jpg
     - assets/Dodgersws.jpg
 
-
   uses-material-design: true
 
   fonts: 
     - family: Mecha
       fonts:
-        - asset: assets\fonts\MechaWar.ttf
+        - asset: assets/fonts/MechaWar.ttf
 
     - family: Kenzo
       fonts:
-        - asset: assets\fonts\Kenzoestic-Bold.otf
-
-
-
+        - asset: assets/fonts/Kenzoestic-Bold.otf

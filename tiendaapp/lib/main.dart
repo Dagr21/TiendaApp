@@ -20,6 +20,8 @@ class MainApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -159,7 +161,7 @@ class HomePage extends StatelessWidget {
                     //Imagen de Presentacion
                     Stack(
                       children: [	
-                        Container (
+                        SizedBox (
                           height: 300,
                           width: double.infinity,
                           child: Image.asset(
@@ -460,7 +462,7 @@ class HomePage extends StatelessWidget {
                     ),
 
                     SizedBox(height: 32),
-                    Container(
+                    SizedBox(
                       width: double.infinity,
                       height: 300,
                       child: Image.asset(

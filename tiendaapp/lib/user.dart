@@ -17,6 +17,8 @@ class MainApp extends StatelessWidget {
 }
 
 class UserProfile extends StatelessWidget {
+  const UserProfile({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,8 +91,14 @@ class UserProfile extends StatelessWidget {
             SizedBox(height: 4),
             ElevatedButton(
               onPressed: () {
-                print('Comprar');
+                
+                Navigator.push(
+                    context, 
+                    MaterialPageRoute(builder: (context) => Login())
+                );
+              
               },
+              
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
                 foregroundColor: Colors.white,
