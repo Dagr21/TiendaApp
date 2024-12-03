@@ -18,6 +18,8 @@ class MainApp extends StatelessWidget {
 }
 
 class Product extends StatelessWidget {
+  const Product({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -17,6 +17,8 @@ class MainApp extends StatelessWidget {
 }
 
 class UserProfile extends StatelessWidget {
+  const UserProfile({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

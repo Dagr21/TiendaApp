@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'user.dart';
 
-
 void main() {
   runApp(const MainApp());
 }
@@ -18,6 +17,8 @@ class MainApp extends StatelessWidget {
 }
 
 class Tendencias extends StatelessWidget {
+  const Tendencias({super.key});
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -67,6 +68,7 @@ class Tendencias extends StatelessWidget {
               Tab(text: 'Accesorios',),
             ],
           ),
+      ),
           drawer: Drawer(
             child: ListView(
               padding: EdgeInsets.zero,
@@ -139,12 +141,11 @@ class Tendencias extends StatelessWidget {
             ], 
           ),
         ),
-      ),
       body: ListView(
         children: [
           Stack(
             children: [	
-              Container (
+              SizedBox (
                 height: 300,
                 width: double.infinity,
                 child: Image.asset(
@@ -189,7 +190,7 @@ class Tendencias extends StatelessWidget {
 
           Stack(
             children: [	
-              Container (
+              SizedBox (
                 height: 300,
                 width: double.infinity,
                 child: Image.asset(
@@ -234,7 +235,7 @@ class Tendencias extends StatelessWidget {
 
           Stack(
             children: [	
-              Container (
+              SizedBox (
                 height: 300,
                 width: double.infinity,
                 child: Image.asset(
@@ -283,4 +284,3 @@ class Tendencias extends StatelessWidget {
     
   }
 }
-
