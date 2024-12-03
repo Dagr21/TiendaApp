@@ -67,7 +67,8 @@ class Tendencias extends StatelessWidget {
               Tab(text: 'Accesorios',),
             ],
           ),
-      ),
+      ), 
+
           drawer: Drawer(
             child: ListView(
               padding: EdgeInsets.zero,
