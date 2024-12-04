@@ -1,3 +1,7 @@
+CREATE DATABASE Tiendaap;
+
+USE Tiendaap;
+
 -- Tabla Administrador
 CREATE TABLE Administrador (
     id INT PRIMARY KEY AUTO_INCREMENT,
