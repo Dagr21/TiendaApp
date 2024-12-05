@@ -12,6 +12,7 @@ dependencies:
   font_awesome_flutter: ^10.5.0
   collection: ^1.18.0
   http_parser: ^4.0.2
+  http: ^1.2.2
 
 
 dev_dependencies:
@@ -29,6 +30,23 @@ flutter:
     - assets/HATS.jpg
     - assets/invierno.jpg
     - assets/Dodgersws.jpg
+    - assets/guantesgk.jpg
+    - assets/bate _louisville.jpg
+    - assets/casco_rawlings.jpg
+    - assets/balonUEFA.jpg
+    - assets/dodgershatws.webp
+    - assets/liceyshirtblue.jpg
+    - assets/gorras/MLB/dodgers.webp
+    - assets/gorras/MLB/whiteSox.webp
+    - assets/gorras/MLB/detroiU.jpg
+    - assets/gorras/MLB/a's.webp
+    - assets/gorras/MLB/boston.jpg
+
+    
+    
+
+  
+
 
   uses-material-design: true
 

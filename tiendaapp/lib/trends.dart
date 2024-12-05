@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:main_app/carrito.dart';
+import 'package:main_app/main.dart';
+import 'package:main_app/notificaciones.dart';
 import 'user.dart';
 
 void main() {
@@ -21,7 +25,9 @@ class Tendencias extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return DefaultTabController(
+      length: 4,
+      child:  Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
           elevation: 1,
@@ -57,18 +63,7 @@ class Tendencias extends StatelessWidget {
               ),
             ),
           ],
-          bottom: TabBar(
-            indicatorColor: Colors.black,
-            labelColor: Colors.black,
-            unselectedLabelColor: Colors.grey,
-            tabs: [	
-              Tab(text: 'Popular',),
-              Tab(text: 'Gorras',),
-              Tab(text: 'T-Shirts',),
-              Tab(text: 'Accesorios',),
-            ],
           ),
-      ),
           drawer: Drawer(
             child: ListView(
               padding: EdgeInsets.zero,
@@ -93,7 +88,12 @@ class Tendencias extends StatelessWidget {
                 leading: Icon(Icons.home),
                 title: Text("Home"),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                    ),
+                  );
                 },
               ),
             
@@ -120,14 +120,24 @@ class Tendencias extends StatelessWidget {
                 leading: Icon(Icons.shopping_cart),
                 title: Text("Carrito"),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                    builder: (context) => Cart(),
+                    ),
+                  );
                 },
               ),
               ListTile(
                 leading: Icon(Icons.notifications),
                 title: Text("Notificaciones"),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                    builder: (context) => Notis(),
+                    ),
+                  );
                 },
               ),
               ListTile(
@@ -157,7 +167,7 @@ class Tendencias extends StatelessWidget {
                 bottom: 16.0,
                 left: 16.0,
                 child: Text(
-                  'Texto de Ejemplo',
+                  'LO MEJOR PARA INVIERNO',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 40.0,
@@ -202,7 +212,7 @@ class Tendencias extends StatelessWidget {
                 bottom: 16.0,
                 left: 16.0,
                 child: Text(
-                  'Texto de Ejemplo',
+                  'REMOLINO DE GORRAS',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 40.0,
@@ -247,7 +257,7 @@ class Tendencias extends StatelessWidget {
                 bottom: 16.0,
                 left: 16.0,
                 child: Text(
-                  'Texto de Ejemplo',
+                  'LO MEJOR DE DOGERS',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 40.0,
@@ -277,9 +287,139 @@ class Tendencias extends StatelessWidget {
               ),           
             ],
           ),
+          SizedBox(height: 24),
 
+          Container(
+            width: double.infinity,
+            color: Colors.black,
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'PARA MAS',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Kenzo',
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
+                ),
+                        Divider(color: Colors.white),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 8.0),
+                              child: Text(
+                                'AYUDA & FAQS',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                )
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 8.0),
+                              child: Text(
+                                'TERMINOS Y CONDICIONES',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 8.0),
+                              child: Text(
+                                'POLITICA DE PRIVACIDAD',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 8.0),
+                              child: Text(
+                                'TUS DERECHOS PRIVADOS',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 24),
+                        Text(
+                          'NUESTRAS REDES SOCIALES',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Kenzo',
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Divider(color: Colors.white),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: Row(
+                            children: [
+                              Icon(Icons.facebook, color: Colors.white),
+                              SizedBox(width: 8),
+                              Text(
+                                'FACEBOOK',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                ),
+                              ),
+                         
+                            ],
+                        
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: Row(
+                            children: [
+                              FaIcon(FontAwesomeIcons.twitter, color: Colors.white),
+                              SizedBox(width: 8),
+                              Text(
+                                'TWITTER',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: Row(
+                            children: [
+                              FaIcon(FontAwesomeIcons.instagram, color: Colors.white),
+                              SizedBox(width: 8),
+                              Text(
+                                'INSTAGRAM',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                      ),
+                      
+          ),
         ],
-      )
+        
+      ),
+      
+    )
     );
     
   }

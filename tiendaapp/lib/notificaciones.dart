@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:main_app/carrito.dart';
 import 'package:main_app/main.dart';
-import 'package:main_app/notificaciones.dart';
 import 'package:main_app/trends.dart';
 import 'user.dart';
 
@@ -14,13 +14,13 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Cart(),
+      home: Notis(),
     );
   }
 }
 
-class Cart extends StatelessWidget {
-  const Cart({super.key});
+class Notis extends StatelessWidget {
+  const Notis({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -131,13 +131,8 @@ class Cart extends StatelessWidget {
                 leading: Icon(Icons.notifications),
                 title: Text("Notificaciones"),
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                    builder: (context) => Notis(),
-                    ),
-                  );
-                }
+                  Navigator.pop(context);
+                },
               ),
               ListTile(
                 leading: Icon(Icons.collections),
@@ -156,10 +151,10 @@ class Cart extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.shopping_bag_outlined, size: 60, color: Colors.grey),
+                Icon(Icons.messenger_outline_sharp, size: 60, color: Colors.grey),
                 SizedBox(height: 20),
                 Text(
-                  "TU CARRITO ESTA VACIO",
+                  "NO TIENES NOTIFICACIONES",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,

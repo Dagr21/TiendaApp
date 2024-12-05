@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:main_app/carrito.dart';
+import 'package:main_app/notificaciones.dart';
 import 'package:main_app/trends.dart';
 import 'user.dart';
 import 'product.dart';
@@ -69,8 +71,6 @@ class HomePage extends StatelessWidget {
             tabs: [	
               Tab(text: 'Popular',),
               Tab(text: 'Gorras',),
-              Tab(text: 'T-Shirts',),
-              Tab(text: 'Accesorios',),
             ],
           ),
         ),
@@ -99,7 +99,12 @@ class HomePage extends StatelessWidget {
                 leading: Icon(Icons.home),
                 title: Text("Home"),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                    ),
+                  );
                 },
               ),
             
@@ -109,10 +114,10 @@ class HomePage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                      MaterialPageRoute(
-                        builder: (context) => Tendencias(),
-                      ),
-                    );
+                    MaterialPageRoute(
+                      builder: (context) => Tendencias(),
+                    ),
+                  );
                 },
               ),
               ListTile(
@@ -126,14 +131,24 @@ class HomePage extends StatelessWidget {
                 leading: Icon(Icons.shopping_cart),
                 title: Text("Carrito"),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                    builder: (context) => Cart(),
+                    ),
+                  );
                 },
               ),
               ListTile(
                 leading: Icon(Icons.notifications),
                 title: Text("Notificaciones"),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                    builder: (context) => Notis(),
+                    ),
+                  );
                 },
               ),
               ListTile(
@@ -173,7 +188,7 @@ class HomePage extends StatelessWidget {
                           bottom: 16.0,
                           left: 16.0,
                           child: Text(
-                            'Texto de Ejemplo',
+                            'JUEGA LIMPIO',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 40.0,
@@ -220,16 +235,20 @@ class HomePage extends StatelessWidget {
                     Wrap(
                       spacing: 16.0,
                       runSpacing: 16.0,
-                      children: List.generate(6, (index) {
-                        return Container(
+                      children: [
+                        Container(
                           width: (MediaQuery.of(context).size.width - 48) / 2,
                           padding: const EdgeInsets.all(16.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Container(
-                                height: 120,
-                                color: Colors.grey[200],
+                              Center(
+                                child:Image .asset(
+                                  height: 180,
+                                  "assets/guantesgk.jpg",
+                                  fit: BoxFit.contain,
+                                  alignment: Alignment.center,
+                                ), 
                               ),
                               SizedBox(height: 4),
                               Text(
@@ -261,8 +280,233 @@ class HomePage extends StatelessWidget {
                               ),
                             ],
                           )
-                        );
-                      }), 
+                        ),
+                        Container(
+                          width: (MediaQuery.of(context).size.width - 48) / 2,
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Center(
+                                child:Image .asset(
+                                  height: 180,
+                                  "assets/bate _louisville.jpg",
+                                  fit: BoxFit.contain,
+                                  alignment: Alignment.center,
+                                ), 
+                              ),
+                              SizedBox(height: 4),
+                              Text(
+                                'Titulo',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              Text(
+                                'Descripccion',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              Text(
+                                '\$00.00',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              SizedBox(height: 4),
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context, 
+                                    MaterialPageRoute(builder: (context) => Product())
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                  foregroundColor: Colors.white,
+                                  minimumSize: Size(double.infinity, 40),
+                                ),
+                                child: Text('Ver articulo'),
+                              ),
+                            ],
+                          )
+                        ),
+                        Container(
+                          width: (MediaQuery.of(context).size.width - 48) / 2,
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Center(
+                                child:Image .asset(
+                                  height: 180,
+                                  "assets/casco_rawlings.jpg",
+                                  fit: BoxFit.contain,
+                                  alignment: Alignment.center,
+                                ), 
+                              ),
+                              SizedBox(height: 4),
+                              Text(
+                                'Titulo',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              Text(
+                                'Descripccion',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              Text(
+                                '\$00.00',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              SizedBox(height: 4),
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context, 
+                                    MaterialPageRoute(builder: (context) => Product())
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                  foregroundColor: Colors.white,
+                                  minimumSize: Size(double.infinity, 40),
+                                ),
+                                child: Text('Ver articulo'),
+                              ),
+                            ],
+                          )
+                        ),
+                        Container(
+                          width: (MediaQuery.of(context).size.width - 48) / 2,
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Center(
+                                child:Image .asset(
+                                  height: 180,
+                                  "assets/balonUEFA.jpg",
+                                  fit: BoxFit.contain,
+                                  alignment: Alignment.center,
+                                ), 
+                              ),
+                              SizedBox(height: 4),
+                              Text(
+                                'Titulo',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              Text(
+                                'Descripccion',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              Text(
+                                '\$00.00',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              SizedBox(height: 4),
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context, 
+                                    MaterialPageRoute(builder: (context) => Product())
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                  foregroundColor: Colors.white,
+                                  minimumSize: Size(double.infinity, 40),
+                                ),
+                                child: Text('Ver articulo'),
+                              ),
+                            ],
+                          )
+                        ),
+                        Container(
+                          width: (MediaQuery.of(context).size.width - 48) / 2,
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Center(
+                                child:Image .asset(
+                                  height: 180,
+                                  "assets/dodgershatws.webp",
+                                  fit: BoxFit.contain,
+                                  alignment: Alignment.center,
+                                ), 
+                              ),
+                              SizedBox(height: 4),
+                              Text(
+                                'Titulo',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              Text(
+                                'Descripccion',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              Text(
+                                '\$00.00',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              SizedBox(height: 4),
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context, 
+                                    MaterialPageRoute(builder: (context) => Product())
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                  foregroundColor: Colors.white,
+                                  minimumSize: Size(double.infinity, 40),
+                                ),
+                                child: Text('Ver articulo'),
+                              ),
+                            ],
+                          )
+                        ),
+                        Container(
+                          width: (MediaQuery.of(context).size.width - 48) / 2,
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Center(
+                                child:Image .asset(
+                                  height: 180,
+                                  "assets/liceyshirtblue.jpg",
+                                  fit: BoxFit.contain,
+                                  alignment: Alignment.center,
+                                ), 
+                              ),
+                              SizedBox(height: 4),
+                              Text(
+                                'Titulo',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              Text(
+                                'Descripccion',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              Text(
+                                '\$00.00',
+                                style: TextStyle(fontSize: 12, color: Colors.black),
+                              ),
+                              SizedBox(height: 4),
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context, 
+                                    MaterialPageRoute(builder: (context) => Product())
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                  foregroundColor: Colors.white,
+                                  minimumSize: Size(double.infinity, 40),
+                                ),
+                                child: Text('Ver articulo'),
+                              ),
+                            ],
+                          )
+                        ),
+                      ],
                     ),
                     SizedBox(height: 24),
 
@@ -485,17 +729,21 @@ class HomePage extends StatelessWidget {
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row (
-                        children: List.generate(6, (index) {
-                          return Container(
+                        children: [
+                          Container(
                             width: 210,
                             margin: EdgeInsets.symmetric(horizontal: 8.0),
                             padding: const EdgeInsets.all(16.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Container(
-                                  height: 100,
-                                  color: Colors.grey[300],
+                                Center(
+                                  child:Image .asset(
+                                  height: 180,
+                                  "assets/gorras/MLB/dodgers.webp",
+                                  fit: BoxFit.contain,
+                                  alignment: Alignment.center,
+                                ), 
                                 ),
                                 SizedBox(height: 4),
                                 Text(
@@ -524,8 +772,180 @@ class HomePage extends StatelessWidget {
                                 ),
                               ],
                             ),
-                          );
-                        }),
+                          ),
+                          Container(
+                            width: 210,
+                            margin: EdgeInsets.symmetric(horizontal: 8.0),
+                            padding: const EdgeInsets.all(16.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Center(
+                                  child:Image .asset(
+                                  height: 180,
+                                  "assets/gorras/MLB/detroiU.jpg",
+                                  fit: BoxFit.contain,
+                                  alignment: Alignment.center,
+                                ), 
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  'Gorra #1',
+                                  style: TextStyle(fontSize: 12, color: Colors.black),
+                                ),
+                                Text(
+                                  'Descripccion',
+                                  style: TextStyle(fontSize: 12, color: Colors.black),
+                                ),
+                                Text(
+                                  '\$00.00',
+                                  style: TextStyle(fontSize: 12, color: Colors.black),
+                                ),
+                                SizedBox(height: 4),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    print('Comprar');
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.black,
+                                    foregroundColor: Colors.white,
+                                    minimumSize: Size(double.infinity, 40),
+                                  ),
+                                  child: Text('Ver articulo'),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: 210,
+                            margin: EdgeInsets.symmetric(horizontal: 8.0),
+                            padding: const EdgeInsets.all(16.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Center(
+                                  child:Image .asset(
+                                  height: 180,
+                                  "assets/gorras/MLB/whiteSox.webp",
+                                  fit: BoxFit.contain,
+                                  alignment: Alignment.center,
+                                ), 
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  'Gorra #1',
+                                  style: TextStyle(fontSize: 12, color: Colors.black),
+                                ),
+                                Text(
+                                  'Descripccion',
+                                  style: TextStyle(fontSize: 12, color: Colors.black),
+                                ),
+                                Text(
+                                  '\$00.00',
+                                  style: TextStyle(fontSize: 12, color: Colors.black),
+                                ),
+                                SizedBox(height: 4),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    print('Comprar');
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.black,
+                                    foregroundColor: Colors.white,
+                                    minimumSize: Size(double.infinity, 40),
+                                  ),
+                                  child: Text('Ver articulo'),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: 210,
+                            margin: EdgeInsets.symmetric(horizontal: 8.0),
+                            padding: const EdgeInsets.all(16.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Center(
+                                  child:Image .asset(
+                                  height: 180,
+                                  "assets/gorras/MLB/a's.webp",
+                                  fit: BoxFit.contain,
+                                  alignment: Alignment.center,
+                                ), 
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  'Gorra #1',
+                                  style: TextStyle(fontSize: 12, color: Colors.black),
+                                ),
+                                Text(
+                                  'Descripccion',
+                                  style: TextStyle(fontSize: 12, color: Colors.black),
+                                ),
+                                Text(
+                                  '\$00.00',
+                                  style: TextStyle(fontSize: 12, color: Colors.black),
+                                ),
+                                SizedBox(height: 4),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    print('Comprar');
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.black,
+                                    foregroundColor: Colors.white,
+                                    minimumSize: Size(double.infinity, 40),
+                                  ),
+                                  child: Text('Ver articulo'),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: 210,
+                            margin: EdgeInsets.symmetric(horizontal: 8.0),
+                            padding: const EdgeInsets.all(16.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Center(
+                                  child:Image .asset(
+                                  height: 180,
+                                  "assets/gorras/MLB/boston.jpg",
+                                  fit: BoxFit.contain,
+                                  alignment: Alignment.center,
+                                ), 
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  'Gorra #1',
+                                  style: TextStyle(fontSize: 12, color: Colors.black),
+                                ),
+                                Text(
+                                  'Descripccion',
+                                  style: TextStyle(fontSize: 12, color: Colors.black),
+                                ),
+                                Text(
+                                  '\$00.00',
+                                  style: TextStyle(fontSize: 12, color: Colors.black),
+                                ),
+                                SizedBox(height: 4),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    print('Comprar');
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.black,
+                                    foregroundColor: Colors.white,
+                                    minimumSize: Size(double.infinity, 40),
+                                  ),
+                                  child: Text('Ver articulo'),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ]
                       ),
                     ),
 
@@ -833,10 +1253,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            //////////////////Pantalla pata T-Shirts///////////////////
-            
-            
-          ],
+          ], 
         )
       ),
     );
